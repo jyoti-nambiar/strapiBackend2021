@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_bookings",
+  "info": {
+    "name": "user-booking",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "price": {
+      "type": "float"
+    },
+    "img": {
+      "type": "text"
+    },
+    "product": {
+      "model": "product",
+      "via": "user_booking"
+    },
+    "users_permissions_user": {
+      "via": "user_bookings",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "mobileNum": {
+      "type": "biginteger"
+    },
+    "time": {
+      "type": "time"
+    }
+  }
+}
